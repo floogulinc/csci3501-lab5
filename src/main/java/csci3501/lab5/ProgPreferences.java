@@ -7,8 +7,8 @@ public class ProgPreferences {
 	final int maxLevel;
 	private final char[] charPreferences;
 
-	ProgPreferences(int selfValue, char[] preferences){
-		this.selfInt = selfValue;
+	ProgPreferences(int selfInt, char[] preferences){
+		this.selfInt = selfInt;
 		maxLevel = preferences.length;
 		charPreferences = preferences;
 	}
