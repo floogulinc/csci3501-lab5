@@ -1,6 +1,9 @@
 package csci3501.lab5;
 
 import java.util.Arrays;
+import java.util.List;
+
+import com.google.common.primitives.Chars;
 
 public class ProgPreferences {
 	final int selfInt;
@@ -15,6 +18,10 @@ public class ProgPreferences {
 
 	char preference(int level) {
 		return charPreferences[level];
+	}
+
+	int indexOfPreference(char company) {
+		return Chars.indexOf(charPreferences, company);		
 	}
 
 	public String toString() {

@@ -2,6 +2,8 @@ package csci3501.lab5;
 
 import java.util.Arrays;
 
+import com.google.common.primitives.Ints;
+
 public class CompPreferences {
 	final char selfChar;
 	final int maxLevel;
@@ -13,8 +15,13 @@ public class CompPreferences {
 		intPreferences = preferences;
 	}
 
+
 	int preference(int level) {
 		return intPreferences[level];
+	}
+
+	int indexOfPreference(int programmer) {
+		return Ints.indexOf(intPreferences, programmer);
 	}
 
 	public String toString() {

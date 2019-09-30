@@ -6,9 +6,33 @@ package csci3501.lab5;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+
 public class AppTest {
-    @Test public void testAppHasAGreeting() {
+   /*  @Test public void testAppHasAGreeting() {
         App classUnderTest = new App();
         assertNotNull("app should have a greeting", classUnderTest.getGreeting());
+    } */
+
+    @Test public void testMatch1() {
+        ArrayList<CompPreferences> compsPreferences = new ArrayList<>();
+	    ArrayList<ProgPreferences> progsPreferences = new ArrayList<>();
+        compsPreferences.add(new CompPreferences('A', new int[]{2, 5, 1, 3, 4}));
+		compsPreferences.add(new CompPreferences('B', new int[]{1, 2, 3, 4, 5}));
+		compsPreferences.add(new CompPreferences('C', new int[]{5, 3, 2, 1, 4}));
+		compsPreferences.add(new CompPreferences('D', new int[]{1, 3, 2, 4, 5}));
+		compsPreferences.add(new CompPreferences('E', new int[]{2, 3, 5, 4, 1}));
+		progsPreferences.add(new ProgPreferences(1, new char[]{'E', 'A', 'D', 'B', 'C'}));
+		progsPreferences.add(new ProgPreferences(2, new char[]{'D', 'E', 'B', 'A', 'C'}));
+		progsPreferences.add(new ProgPreferences(3, new char[]{'D', 'B', 'C', 'E', 'A'}));
+		progsPreferences.add(new ProgPreferences(4, new char[]{'C', 'B', 'D', 'A', 'E'}));
+		progsPreferences.add(new ProgPreferences(5, new char[]{'A', 'D', 'B', 'C', 'E'}));
+        Matcher matcher = new Matcher(compsPreferences, progsPreferences);
+        ArrayList<PreferencePair> matched = matcher.match();
+        System.out.println("\nSolution:");
+		System.out.println(matched);
+        assertEquals("Matches size is wrong", matched.size(), compsPreferences.size());
+        assertTrue("Matches are not satisfactory", matcher.isSatisfactory());
+
     }
 }

@@ -29,46 +29,9 @@ public class App {
 			System.out.println(p);
 		}
 
-		match(N);
+		//match(N);
 
 		System.out.println("\nSolution:");
 		System.out.println(matchedPairs);
-	}
-
-	private static void match(int maxLevel) {
-		for (int lower = 0; lower < maxLevel; ++lower) {
-			for (int i = 0; i < lower; ++i) {
-				findPairs(i, lower);
-				findPairs(lower, i);
-			}
-			findPairs(lower, lower);
-		}
-	}
-
-	private static void findPairs(int compLevel, int progLevel) {
-		for (Iterator<CompPreferences> compIterator = compsPreferences.iterator(); compIterator.hasNext();) {
-			CompPreferences compPs = compIterator.next();
-
-			for (Iterator<ProgPreferences> progIterator = progsPreferences.iterator(); progIterator.hasNext();) {
-				ProgPreferences progPs = progIterator.next();
-
-				if (compPs.maxLevel > compLevel && progPs.maxLevel > progLevel
-						&& areMatched(compPs, compLevel, progPs, progLevel)) {
-
-					matchedPairs.add(new PreferencePair(
-							compPs.preference(compLevel), progPs.preference(progLevel)));
-
-					compIterator.remove();
-					progIterator.remove();
-				}
-			}
-		}
-	}
-
-	private static boolean areMatched(CompPreferences company, int compLevel,
-	                                  ProgPreferences programmer, int progLevel) {
-
-		return company.preference(compLevel) == programmer.selfInt &&
-				programmer.preference(progLevel) == company.selfChar;
 	}
 }
