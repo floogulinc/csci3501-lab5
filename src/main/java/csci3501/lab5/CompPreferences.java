@@ -6,18 +6,17 @@ import com.google.common.primitives.Ints;
 
 public class CompPreferences {
 	final char selfChar;
-	final int maxLevel;
 	private final int[] intPreferences;
+	private int i = 0;
 
 	CompPreferences(char selfChar, int[] preferences){
 		this.selfChar = selfChar;
-		maxLevel = preferences.length;
 		intPreferences = preferences;
 	}
 
-
-	int preference(int level) {
-		return intPreferences[level];
+	int getProgramer() {
+		++i;
+		return intPreferences[i - 1];
 	}
 
 	int indexOfPreference(int programmer) {

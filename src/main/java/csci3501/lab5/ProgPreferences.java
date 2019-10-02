@@ -7,12 +7,10 @@ import com.google.common.primitives.Chars;
 
 public class ProgPreferences {
 	final int selfInt;
-	final int maxLevel;
-	private final char[] charPreferences;
+	final char[] charPreferences;
 
 	ProgPreferences(int selfInt, char[] preferences){
 		this.selfInt = selfInt;
-		maxLevel = preferences.length;
 		charPreferences = preferences;
 	}
 
