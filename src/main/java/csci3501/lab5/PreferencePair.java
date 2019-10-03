@@ -30,7 +30,8 @@ public class PreferencePair {
 	 * The equals mathod
 	 * @param p another preference pair
 	 * @return true if another preference pair is the same one to this preference pair
-	 * or they have the same programmer and company*/
+	 * or they have the same programmer and company
+	 */
 	boolean equals(PreferencePair p) {
 		return p == this || prog == p.prog && comp == p.comp;
 	}
