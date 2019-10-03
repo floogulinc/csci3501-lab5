@@ -3,7 +3,7 @@ package csci3501.lab5;
 import java.util.ArrayList;
 
 /**
- * The App class illustrates how to match programmers and companies with our algorithm with an example
+ * The App class provides an example on how to match programmers and companies with our algorithm
  */
 public class App {
 	public static void main(String[] args) {
@@ -34,22 +34,22 @@ public class App {
 
 		// Print the input companies' and programmers' preferences
 		System.out.println("Input Preferences:");
-		for (CompPreferences p : compsPreferences) {
-			System.out.println(p);
+		for (CompPreferences pref : compsPreferences) {
+			System.out.println(pref);
 		}
-		for (ProgPreferences p : progsPreferences) {
-			System.out.println(p);
+		for (ProgPreferences pref : progsPreferences) {
+			System.out.println(pref);
 		}
 
 		// Call the constructor of the matcher and input the number of companies and programmers,
 		// and the companies'and programmers' preferences
-		Matcher m = new Matcher(compsPreferences, progsPreferences, N);
+		Matcher matcher = new Matcher(compsPreferences, progsPreferences, N);
 		// Call the matcher to match and store the returned pairs
-		ArrayList<PreferencePair> matchedPairs = m.match();
+		ArrayList<PreferencePair> matchedPairs = matcher.match();
 
 		// Print the returned pairs and call the matcher to examine if it is satisfactory
 		System.out.println("\nSolution:");
 		System.out.println(matchedPairs);
-		System.out.println("\nIs satisfactory: " + m.isSatisfactory());
+		System.out.println("\nIs satisfactory: " + matcher.isSatisfactory());
 	}
 }
