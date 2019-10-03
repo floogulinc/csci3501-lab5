@@ -70,7 +70,7 @@ public class Matcher {
 		    int p = compPref.getProgrammer();
 		    char c = compPref.selfChar;
 
-		    // Get the original preference pair of that programmer is they have already been matched
+		    // Get the original preference pair of that programmer if they have already been matched
 		    PreferencePair originalPair = isMatchedWith(p);
 
 		    if (originalPair != null) {
@@ -85,7 +85,8 @@ public class Matcher {
 				    if (c == comp)  {
 					    // If is company has a higher preference level on the programmer, match this company with
 					    // the programmer and replace the original pair
-					    matchedPairs.set(matchedPairs.indexOf(originalPair), new PreferencePair(p, c));
+                        matchedPairs.set(matchedPairs.indexOf(originalPair), new PreferencePair(p, c));
+                        break;
 				    } else if (anotherComp == comp) {
 			    		// If the other company have a higher preference, move to the next programmer on the
 					    // company's preference list
