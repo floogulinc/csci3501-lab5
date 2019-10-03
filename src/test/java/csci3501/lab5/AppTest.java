@@ -7,8 +7,26 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
-
+/*
+ * Test the match function with different programmer and company preferences inputs
+ *
+ * Note that our inputs always meet the following requirements:
+ *  N programmers are looking for a job;
+ *  N companies are looking to hire a programmer.
+ *  Each programmer has a ranking of the companies based on his/her preferences
+ *  for a workplace.
+ *  Likewise,  each  company  has  a  ranking  of  the  N  programmers based on
+ *  whom they would like to hire.
+ *
+ * If not all the requirement are met, our match function will cause NullPointerException,
+ * IllegalStateException, or give an non-satisfactory result.
+ * */
 public class AppTest {
+
+	/*
+	 * Test the match method with empty input preference
+	 * Our match function works correctly and the result is satisfactory
+	 */
 	@Test public void testEmpty() {
 		int N = 0;
 		CompPreferences[] compsPreferences = new CompPreferences[N];
@@ -20,6 +38,10 @@ public class AppTest {
 		assertTrue("Matches are not satisfactory", matcher.isSatisfactory());
 	}
 
+	/*
+	 * Test the match method with one programmer and one company
+	 * Our match function works correctly and the result is satisfactory
+	 */
 	@Test public void testOnePair() {
 		int N = 1;
 		CompPreferences[] compsPreferences = new CompPreferences[N];
@@ -33,6 +55,10 @@ public class AppTest {
 		assertTrue("Matches are not satisfactory", matcher.isSatisfactory());
 	}
 
+	/*
+	 * Test the match method with two programmers and two companies having random preferences
+	 * Our match function works correctly and the result is satisfactory
+	 */
 	@Test public void testTwoPairs() {
 		int N = 2;
 		CompPreferences[] compsPreferences = new CompPreferences[N];
@@ -48,6 +74,10 @@ public class AppTest {
 		assertTrue("Matches are not satisfactory", matcher.isSatisfactory());
 	}
 
+	/*
+	 * Test the match method with two programmers and two companies having the same preferences
+	 * Our match function works correctly and the result is satisfactory
+	 */
 	@Test public void testTwoPairsSamePrefs() {
 		int N = 2;
 		CompPreferences[] compsPreferences = new CompPreferences[N];
@@ -63,6 +93,11 @@ public class AppTest {
 		assertTrue("Matches are not satisfactory", matcher.isSatisfactory());
 	}
 
+	/*
+	 * Test the match method with two programmers and two companies having the same preferences
+	 * But the programmers' preference are in reversed orders
+	 * Our match function works correctly and the result is satisfactory
+	 */
 	@Test public void testTwoPairsReversePrefs() {
 		int N = 2;
 		CompPreferences[] compsPreferences = new CompPreferences[N];
@@ -78,6 +113,30 @@ public class AppTest {
 		assertTrue("Matches are not satisfactory", matcher.isSatisfactory());
 	}
 
+	/*
+	 * Test the match method with two programmers and two companies having the same preferences
+	 * But the companies' preference are in reversed orders
+	 * Our match function works correctly and the result is satisfactory
+	 */
+	@Test public void testTwoPairsReversePrefs2() {
+		int N = 2;
+		CompPreferences[] compsPreferences = new CompPreferences[N];
+		ProgPreferences[] progsPreferences = new ProgPreferences[N];
+		compsPreferences[0] = new CompPreferences('A', new int[]{2, 1});
+		compsPreferences[1] = new CompPreferences('B', new int[]{2, 1});
+		progsPreferences[0] = new ProgPreferences(1, new char[]{'A', 'B'});
+		progsPreferences[1] = new ProgPreferences(2, new char[]{'A', 'B'});
+		Matcher matcher = new Matcher(compsPreferences, progsPreferences, N);
+		ArrayList<PreferencePair> matchedPairs = matcher.match();
+		System.out.println("Solution: " + matchedPairs);
+		assertEquals("Matches size is wrong", matchedPairs.size(), N);
+		assertTrue("Matches are not satisfactory", matcher.isSatisfactory());
+	}
+
+	/*
+	 * Test the match method with three programmers and three companies with random preferences
+	 * Our match function works correctly and the result is satisfactory
+	 */
 	@Test public void testThreePairs() {
 		int N = 3;
 		CompPreferences[] compsPreferences = new CompPreferences[N];
@@ -95,6 +154,10 @@ public class AppTest {
 		assertTrue("Matches are not satisfactory", matcher.isSatisfactory());
 	}
 
+	/*
+	 * Test the match method with three programmers and three companies having the same preferences
+	 * Our match function works correctly and the result is satisfactory
+	 */
 	@Test public void testThreePairsSamePrefs() {
 		int N = 3;
 		CompPreferences[] compsPreferences = new CompPreferences[N];
@@ -112,6 +175,11 @@ public class AppTest {
 		assertTrue("Matches are not satisfactory", matcher.isSatisfactory());
 	}
 
+	/*
+	 * Test the match method with three programmers and three companies having the same preferences
+	 * But the programmers' preference are in reversed orders
+	 * Our match function works correctly and the result is satisfactory
+	 */
 	@Test public void testThreePairsReversePrefs() {
 		int N = 3;
 		CompPreferences[] compsPreferences = new CompPreferences[N];
@@ -129,6 +197,32 @@ public class AppTest {
 		assertTrue("Matches are not satisfactory", matcher.isSatisfactory());
 	}
 
+	/*
+	 * Test the match method with three programmers and three companies having the same preferences
+	 * But the companies' preference are in reversed orders
+	 * Our match function works correctly and the result is satisfactory
+	 */
+	@Test public void testThreePairsReversePrefs2() {
+		int N = 3;
+		CompPreferences[] compsPreferences = new CompPreferences[N];
+		ProgPreferences[] progsPreferences = new ProgPreferences[N];
+		compsPreferences[0] = new CompPreferences('A', new int[]{3, 2, 1});
+		compsPreferences[1] = new CompPreferences('B', new int[]{3, 2, 1});
+		compsPreferences[2] = new CompPreferences('C', new int[]{3, 2, 1});
+		progsPreferences[0] = new ProgPreferences(1, new char[]{'A', 'B', 'C'});
+		progsPreferences[1] = new ProgPreferences(2, new char[]{'A', 'B', 'C'});
+		progsPreferences[2] = new ProgPreferences(3, new char[]{'A', 'B', 'C'});
+		Matcher matcher = new Matcher(compsPreferences, progsPreferences, N);
+		ArrayList<PreferencePair> matchedPairs = matcher.match();
+		System.out.println("Solution: " + matchedPairs);
+		assertEquals("Matches size is wrong", matchedPairs.size(), N);
+		assertTrue("Matches are not satisfactory", matcher.isSatisfactory());
+	}
+
+	/*
+	 * Test the match method with five programmers and five companies with random preferences
+	 * Our match function works correctly and the result is satisfactory
+	 */
     @Test public void testFivePairs() {
     	int N = 5;
 	    CompPreferences[] compsPreferences = new CompPreferences[N];
@@ -150,6 +244,10 @@ public class AppTest {
         assertTrue("Matches are not satisfactory", matcher.isSatisfactory());
     }
 
+	/*
+	 * Test the match method with five programmers and five companies with the same preferences
+	 * Our match function works correctly and the result is satisfactory
+	 */
 	@Test public void testFivePairsSamePrefs() {
 		int N = 5;
 		CompPreferences[] compsPreferences = new CompPreferences[N];
@@ -171,6 +269,11 @@ public class AppTest {
 		assertTrue("Matches are not satisfactory", matcher.isSatisfactory());
 	}
 
+	/*
+	 * Test the match method with five programmers and five companies with the same preferences
+	 * But the programmers' preference are in reversed orders
+	 * Our match function works correctly and the result is satisfactory
+	 */
 	@Test public void testFivePairsReversePrefs() {
 		int N = 5;
 		CompPreferences[] compsPreferences = new CompPreferences[N];
@@ -192,6 +295,36 @@ public class AppTest {
 		assertTrue("Matches are not satisfactory", matcher.isSatisfactory());
 	}
 
+	/*
+	 * Test the match method with five programmers and five companies with the same preferences
+	 * But the companies' preference are in reversed orders
+	 * Our match function works correctly and the result is satisfactory
+	 */
+	@Test public void testFivePairsReversePrefs2() {
+		int N = 5;
+		CompPreferences[] compsPreferences = new CompPreferences[N];
+		ProgPreferences[] progsPreferences = new ProgPreferences[N];
+		compsPreferences[0] = new CompPreferences('A', new int[]{5, 4, 3, 2, 1});
+		compsPreferences[1] = new CompPreferences('B', new int[]{5, 4, 3, 2, 1});
+		compsPreferences[2] = new CompPreferences('C', new int[]{5, 4, 3, 2, 1});
+		compsPreferences[3] = new CompPreferences('D', new int[]{5, 4, 3, 2, 1});
+		compsPreferences[4] = new CompPreferences('E', new int[]{5, 4, 3, 2, 1});
+		progsPreferences[0] = new ProgPreferences(1, new char[]{'A', 'B', 'C', 'D', 'E'});
+		progsPreferences[1] = new ProgPreferences(2, new char[]{'A', 'B', 'C', 'D', 'E'});
+		progsPreferences[2] = new ProgPreferences(3, new char[]{'A', 'B', 'C', 'D', 'E'});
+		progsPreferences[3] = new ProgPreferences(4, new char[]{'A', 'B', 'C', 'D', 'E'});
+		progsPreferences[4] = new ProgPreferences(5, new char[]{'A', 'B', 'C', 'D', 'E'});
+		Matcher matcher = new Matcher(compsPreferences, progsPreferences, N);
+		ArrayList<PreferencePair> matchedPairs = matcher.match();
+		System.out.println("Solution: " + matchedPairs);
+		assertEquals("Matches size is wrong", matchedPairs.size(), N);
+		assertTrue("Matches are not satisfactory", matcher.isSatisfactory());
+	}
+
+	/*
+	 * Test the match method with ten programmers and ten companies with random preferences
+	 * Our match function works correctly and the result is satisfactory
+	 */
 	@Test public void testTenPairs() {
 		int N = 10;
 		CompPreferences[] compsPreferences = new CompPreferences[N];
