@@ -58,18 +58,19 @@ This will also output a summary of the test results to `build/reports/tests/test
   match algorithm will random preferences, same company and programmer preferences, and reverse the preference sequence 
   of the company or the programmer at different input sizes.  
   
-- By the assertions and the result printed, our algorithm works correctly to produce satisfactory pairs. 
-  Our tests and test results are documented in tests folder. Note that all our test data meets the following 
-  requirements: 
+- By the assertions and the result printed, our algorithm works correctly to produce satisfactory pairs and passed all 
+  our tests. Our tests and test results are documented in tests folder. 
   
-       N programmers are looking for a job;
-       N companies are looking to hire a programmer.
-       Each programmer has a ranking of the companies based on his/her preferences
-       for a workplace.
-       Likewise,  each  company  has  a  ranking  of  the  N  programmers based on
-       whom they would like to hire.
+- Note that all our test data meets the following requirements: 
   
-  Attempts to try input data not following these requirements will not get a correct or a satisfactory result. AIt may 
+    N programmers are looking for a job;
+    N companies are looking to hire a programmer.
+    Each programmer has a ranking of the companies based on his/her preferences
+    for a workplace.
+    Likewise,  each  company  has  a  ranking  of  the  N  programmers based on
+    whom they would like to hire.
+  
+  Attempts to try input data not following these requirements will not get a correct or a satisfactory result. It may 
   even cause an exception and break the program.
  
 ## Efficiency Analysis

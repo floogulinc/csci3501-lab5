@@ -13,10 +13,10 @@ import java.util.stream.Collectors;
  * Based on the pseudo code from: https://en.wikipedia.org/wiki/Stable_marriage_problem#Algorithm
  */
 public class Matcher {
-    private CompPreferences[] companiesPrefs;
+	private int N;
+	private CompPreferences[] companiesPrefs;
 	private ProgPreferences[] programmersPrefs;
-    private ArrayList<PreferencePair> matchedPairs = new ArrayList<>();
-    private int N;
+	private ArrayList<PreferencePair> matchedPairs = new ArrayList<>();
 
     /**
      * Create a mew Matcher object
@@ -63,30 +63,30 @@ public class Matcher {
 		// Continue to get the next unmatched company's preference until all companys and programmers are matched
     	while (matchedPairs.size() < N) {
     		// Get the preference of the next unmatched company
-    		CompPreferences compP = Arrays.stream(companiesPrefs).filter(comp -> isMatchedWith(comp.selfChar) == null)
+    		CompPreferences compPref = Arrays.stream(companiesPrefs).filter(comp -> isMatchedWith(comp.selfChar) == null)
 				    .findFirst().get();
 
     		// Get the next programmer from the company's preferences that have not tried
-		    int p = compP.getProgrammer();
-		    char c = compP.selfChar;
+		    int p = compPref.getProgrammer();
+		    char c = compPref.selfChar;
 
 		    // Get the original preference pair of that programmer is they have already been matched
 		    PreferencePair originalPair = isMatchedWith(p);
 
 		    if (originalPair != null) {
 		    	// If the programmer has already been matched, get that company and the programmer's preferences
-			    char anotherC = originalPair.comp;
-			    char[] otherCompP = Arrays.stream(programmersPrefs).filter(prog -> prog.selfInt == p)
+			    char anotherComp = originalPair.comp;
+			    char[] anotherCompPref = Arrays.stream(programmersPrefs).filter(prog -> prog.selfInt == p)
 					    .findAny().get().charPreferences;
 
 			    // Compare which of this company and the programmer's original paired company are more preferred
 			    // to the programmer
-			    for (char comp : otherCompP) {
+			    for (char comp : anotherCompPref) {
 				    if (c == comp)  {
 					    // If is company has a higher preference level on the programmer, match this company with
 					    // the programmer and replace the original pair
 					    matchedPairs.set(matchedPairs.indexOf(originalPair), new PreferencePair(p, c));
-				    } else if (anotherC == comp) {
+				    } else if (anotherComp == comp) {
 			    		// If the other company have a higher preference, move to the next programmer on the
 					    // company's preference list
 			    		break;
@@ -105,9 +105,9 @@ public class Matcher {
 	 * Identify whether the input company is already matched onto the matchPairs
 	 * @return the pair the company is matched to if it is already matched, null otherwise
 	 */
-	private PreferencePair isMatchedWith(char c) {
-		for (PreferencePair p : matchedPairs) {
-			if (p.comp == c) return p;
+	private PreferencePair isMatchedWith(char comp) {
+		for (PreferencePair pair : matchedPairs) {
+			if (pair.comp == comp) return pair;
 		}
     	return null;
 	}
@@ -116,9 +116,9 @@ public class Matcher {
 	 * Identify whether the input programmer is already matched onto the matchPairs
 	 * @return the pair the programmer is matched to if it is already matched, null otherwise
 	 */
-	private PreferencePair isMatchedWith(int i) {
-		for (PreferencePair p : matchedPairs) {
-			if (p.prog == i) return p;
+	private PreferencePair isMatchedWith(int prog) {
+		for (PreferencePair pair : matchedPairs) {
+			if (pair.prog == prog) return pair;
 		}
 		return null;
 	}
