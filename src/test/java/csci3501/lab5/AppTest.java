@@ -9,12 +9,12 @@ import java.util.ArrayList;
  * Test the match function with different programmer and company preferences inputs
  *
  * Note that our inputs always meet the following requirements:
- *  N programmers are looking for a job;
- *  N companies are looking to hire a programmer.
- *  Each programmer has a ranking of the companies based on his/her preferences
- *  for a workplace.
- *  Likewise,  each  company  has  a  ranking  of  the  N  programmers based on
- *  whom they would like to hire.
+ *      N programmers are looking for a job;
+ *      N companies are looking to hire a programmer.
+ *      Each programmer has a ranking of the companies based on his/her preferences
+ *      for a workplace.
+ *      Likewise,  each  company  has  a  ranking  of  the  N  programmers based on
+ *      whom they would like to hire.
  *
  * If not all the requirement are met, our match function will not produce a satisfactory result,
  * and it may cause NullPointerException, IllegalStateException, or other exceptions.
