@@ -11,6 +11,8 @@
   unmatched. Keep getting the company that still remains unmatched and try to match it with the next mostly preferred
   programmer that has not been matched with it until all companies and programmers are matched.
   
+- The App class is documented with an example about how to use our match algorithm.
+  
 #### Why It Always Stops
 
 - We begin to choose a company and match it with its mostly preferred programmer. When the programmer is matched with
