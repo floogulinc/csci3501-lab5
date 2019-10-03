@@ -32,6 +32,6 @@ public class App {
 
 		System.out.println("\nSolution:");
 		System.out.println(matchedPairs);
-		System.out.println("\nIs satisfactory: " + m.isSatisfactory(matchedPairs));
+		System.out.println("\nIs satisfactory: " + m.isSatisfactory());
 	}
 }

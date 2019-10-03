@@ -60,12 +60,12 @@ public class Matcher {
 		return null;
 	}
 
-    public  boolean isSatisfactory(ArrayList<PreferencePair> pairs) {
+    public  boolean isSatisfactory() {
         Map<Character, CompPreferences> companies = Arrays.stream(companiesPrefsOriginal).collect(Collectors.toMap(i -> i.selfChar, i -> i));
         Map<Integer, ProgPreferences> programmers = Arrays.stream(programmersPredsOriginal).collect(Collectors.toMap(i -> i.selfInt, i -> i));
 
-		for(PreferencePair pair1 : pairs) {
-			for(PreferencePair pair2 : pairs) {
+		for(PreferencePair pair1 : matchedPairs) {
+			for(PreferencePair pair2 : matchedPairs) {
 				if(!(pair1.equals(pair2))){
                     ProgPreferences p1 = programmers.get(pair1.prog);
                     ProgPreferences p2 = programmers.get(pair2.prog);
