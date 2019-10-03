@@ -22,7 +22,7 @@ public class Matcher {
     		CompPreferences compP = Arrays.stream(companiesPrefsOriginal).filter(comp -> isMatchedWith(comp.selfChar) == null)
 				    .findFirst().get();
 
-		    int p = compP.getProgramer();
+		    int p = compP.getProgrammer();
 		    char c = compP.selfChar;
 		    PreferencePair originalPair = isMatchedWith(p);
 

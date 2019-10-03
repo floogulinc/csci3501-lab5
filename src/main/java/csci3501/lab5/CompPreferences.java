@@ -14,7 +14,7 @@ public class CompPreferences {
 		intPreferences = preferences;
 	}
 
-	int getProgramer() {
+	int getProgrammer() {
 		++i;
 		return intPreferences[i - 1];
 	}

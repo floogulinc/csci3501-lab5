@@ -14,10 +14,6 @@ public class ProgPreferences {
 		charPreferences = preferences;
 	}
 
-	char preference(int level) {
-		return charPreferences[level];
-	}
-
 	int indexOfPreference(char company) {
 		return Chars.indexOf(charPreferences, company);		
 	}
