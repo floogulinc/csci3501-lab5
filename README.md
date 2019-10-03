@@ -21,7 +21,7 @@
   
 - Because we loop with unmatched companies and always match a company with the next programmer on its list, all the 
   programmers will at least be matched with a company once. And we will never try to match a company with the same
-  programmer twice. Because we match compaies and programmers with limited amount of attempts, the algorithm always
+  programmer twice. Because we match companies and programmers with limited amount of attempts, the algorithm always
   stops.
   
 #### Why the Output is Always Satisfactory
@@ -34,4 +34,13 @@
   
 #### The idea we use to solve the lab problem comes from [Gale–Shapley algorithm (Wikipedia)](https://en.wikipedia.org/wiki/Stable_marriage_problem).
   
+## Test Cases Summary
+
+- Our match algorithm is tested with different number of programmer's and company's preferences (N = 0, 1, 2, 3, 5, 10).
+  Because the preference sequence it reads will affect how our algorithm can find the satisfactory pairs, we test the 
+  match algorithm will random preferences, same company and programmer preferences, and reverse the preference sequence 
+  of the company or the programmer at different input sizes.  
+  
+- By the assertions and the result printed, our algorithm works correctly to produce satisfactory pairs. 
+  Our tests and test results are documented in tests folder.
   

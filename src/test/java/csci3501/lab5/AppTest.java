@@ -23,7 +23,8 @@ public class AppTest {
 
 	/**
 	 * Test the match method with empty input preference
-	 * Our match function works correctly and the result is satisfactory
+	 * Our match function works correctly and the result is satisfactory from the assertions
+	 * and the result printed
 	 */
 	@Test public void testEmpty() {
 		int N = 0;
@@ -38,7 +39,8 @@ public class AppTest {
 
 	/**
 	 * Test the match method with one programmer and one company
-	 * Our match function works correctly and the result is satisfactory
+	 * Our match function works correctly and the result is satisfactory from the assertions
+	 * and the result printed
 	 */
 	@Test public void testOnePair() {
 		int N = 1;
@@ -55,7 +57,8 @@ public class AppTest {
 
 	/**
 	 * Test the match method with two programmers and two companies having random preferences
-	 * Our match function works correctly and the result is satisfactory
+	 * Our match function works correctly and the result is satisfactory from the assertions
+	 * and the result printed
 	 */
 	@Test public void testTwoPairs() {
 		int N = 2;
@@ -74,7 +77,8 @@ public class AppTest {
 
 	/**
 	 * Test the match method with two programmers and two companies having the same preferences
-	 * Our match function works correctly and the result is satisfactory
+	 * Our match function works correctly and the result is satisfactory from the assertions
+	 * and the result printed
 	 */
 	@Test public void testTwoPairsSamePrefs() {
 		int N = 2;
@@ -94,7 +98,8 @@ public class AppTest {
 	/**
 	 * Test the match method with two programmers and two companies having the same preferences
 	 * But the programmers' preference are in reversed orders
-	 * Our match function works correctly and the result is satisfactory
+	 * Our match function works correctly and the result is satisfactory from the assertions
+	 * and the result printed
 	 */
 	@Test public void testTwoPairsReversePrefs() {
 		int N = 2;
@@ -114,7 +119,8 @@ public class AppTest {
 	/**
 	 * Test the match method with two programmers and two companies having the same preferences
 	 * But the companies' preference are in reversed orders
-	 * Our match function works correctly and the result is satisfactory
+	 * Our match function works correctly and the result is satisfactory from the assertions
+	 * and the result printed
 	 */
 	@Test public void testTwoPairsReversePrefs2() {
 		int N = 2;
@@ -133,7 +139,8 @@ public class AppTest {
 
 	/**
 	 * Test the match method with three programmers and three companies with random preferences
-	 * Our match function works correctly and the result is satisfactory
+	 * Our match function works correctly and the result is satisfactory from the assertions
+	 * and the result printed
 	 */
 	@Test public void testThreePairs() {
 		int N = 3;
@@ -154,7 +161,8 @@ public class AppTest {
 
 	/**
 	 * Test the match method with three programmers and three companies having the same preferences
-	 * Our match function works correctly and the result is satisfactory
+	 * Our match function works correctly and the result is satisfactory from the assertions
+	 * and the result printed
 	 */
 	@Test public void testThreePairsSamePrefs() {
 		int N = 3;
@@ -176,7 +184,8 @@ public class AppTest {
 	/**
 	 * Test the match method with three programmers and three companies having the same preferences
 	 * But the programmers' preference are in reversed orders
-	 * Our match function works correctly and the result is satisfactory
+	 * Our match function works correctly and the result is satisfactory from the assertions
+	 * and the result printed
 	 */
 	@Test public void testThreePairsReversePrefs() {
 		int N = 3;
@@ -198,7 +207,8 @@ public class AppTest {
 	/**
 	 * Test the match method with three programmers and three companies having the same preferences
 	 * But the companies' preference are in reversed orders
-	 * Our match function works correctly and the result is satisfactory
+	 * Our match function works correctly and the result is satisfactory from the assertions
+	 * and the result printed
 	 */
 	@Test public void testThreePairsReversePrefs2() {
 		int N = 3;
@@ -219,7 +229,8 @@ public class AppTest {
 
 	/**
 	 * Test the match method with five programmers and five companies with random preferences
-	 * Our match function works correctly and the result is satisfactory
+	 * Our match function works correctly and the result is satisfactory from the assertions
+	 * and the result printed
 	 */
     @Test public void testFivePairs() {
     	int N = 5;
@@ -244,7 +255,8 @@ public class AppTest {
 
 	/**
 	 * Test the match method with five programmers and five companies with the same preferences
-	 * Our match function works correctly and the result is satisfactory
+	 * Our match function works correctly and the result is satisfactory from the assertions
+	 * and the result printed
 	 */
 	@Test public void testFivePairsSamePrefs() {
 		int N = 5;
@@ -270,7 +282,8 @@ public class AppTest {
 	/**
 	 * Test the match method with five programmers and five companies with the same preferences
 	 * But the programmers' preference are in reversed orders
-	 * Our match function works correctly and the result is satisfactory
+	 * Our match function works correctly and the result is satisfactory from the assertions
+	 * and the result printed
 	 */
 	@Test public void testFivePairsReversePrefs() {
 		int N = 5;
@@ -296,7 +309,8 @@ public class AppTest {
 	/**
 	 * Test the match method with five programmers and five companies with the same preferences
 	 * But the companies' preference are in reversed orders
-	 * Our match function works correctly and the result is satisfactory
+	 * Our match function works correctly and the result is satisfactory from the assertions
+	 * and the result printed
 	 */
 	@Test public void testFivePairsReversePrefs2() {
 		int N = 5;
@@ -321,7 +335,8 @@ public class AppTest {
 
 	/**
 	 * Test the match method with ten programmers and ten companies with random preferences
-	 * Our match function works correctly and the result is satisfactory
+	 * Our match function works correctly and the result is satisfactory from the assertions
+	 * and the result printed
 	 */
 	@Test public void testTenPairs() {
 		int N = 10;
