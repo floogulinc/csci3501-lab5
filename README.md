@@ -77,3 +77,5 @@ for (char comp : anotherCompPref) {
 This loop can involve setting items in the output pairs list so it is significant to the time calculation.
 
 This loop in a loop will be the dominating factor in the worst-case efficiency, so we conclude the algorithm has an efficiency of O(N²) where N is the number of of companies and the number of programmers.
+
+Another explanation of the big-Oh is that for each time we move to the next company, we always find that the programmer prefers the next company more than its previous one. So in this case, we need to try to match each company with each programmers. And because the algorithm will try all combinations until a satisfactory pairing is found, it runs N² times, which is the worst case of our algorithm. Thus, the algorithm has an efficiency of O(N²).
