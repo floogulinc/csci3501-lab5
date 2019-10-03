@@ -32,6 +32,6 @@
   another company more than the company. So it is impossible to switch a programmer to another company and improve 
   both of their preferences. Thus, our result is always satisfactory.
   
-#### Our idea we use to solve the lab problem comes from [Gale–Shapley algorithm (Wikipedia)](https://en.wikipedia.org/wiki/Stable_marriage_problem).
+#### The idea we use to solve the lab problem comes from [Gale–Shapley algorithm (Wikipedia)](https://en.wikipedia.org/wiki/Stable_marriage_problem).
   
   
