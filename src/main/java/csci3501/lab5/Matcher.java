@@ -9,6 +9,8 @@ import java.util.stream.Collectors;
  * The matcher takes the preferences of the companies and programmers match them with a satisfactory order
  * It holds the arrays of companies' preferences and programmers' preferences,
  * an arrayList to store generated pairs and and int of the number of companies and programmers
+ * 
+ * Based on the pseudo code from: https://en.wikipedia.org/wiki/Stable_marriage_problem#Algorithm
  */
 public class Matcher {
     private CompPreferences[] companiesPrefs;
@@ -17,7 +19,7 @@ public class Matcher {
     private int N;
 
     /**
-     * The constructor
+     * Create a mew Matcher object
      * Note that our inputs always meet the following requirements:
      *     N programmers are looking for a job;
      *     N companies are looking to hire a programmer.
@@ -33,6 +35,24 @@ public class Matcher {
         this.companiesPrefs = compsPreferences;
         this.programmersPrefs = progsPreferences;
 	    this.N = N;
+    }
+
+    /**
+     * Create a mew Matcher object
+     * Sets N based on the number of companies provided
+     * @param compsPreferences an array of each companies' preferences
+     * @param progsPreferences an array of each programmers' preferences
+     * */
+    public Matcher(CompPreferences[] compsPreferences, ProgPreferences[] progsPreferences) {
+        this(compsPreferences, progsPreferences, compsPreferences.length);
+    }
+
+    /**
+     * This constructors allows us to test the isSatisfactory tests
+     */
+    public Matcher(CompPreferences[] compsPreferences, ProgPreferences[] progsPreferences, ArrayList<PreferencePair> matchedPairs) {  
+        this(compsPreferences, progsPreferences);
+        this.matchedPairs = matchedPairs;
     }
 
     /**
@@ -109,7 +129,7 @@ public class Matcher {
 	 * C1 and C2 ranks P1 higher than P2 (in other words, P1 can switch to C1 to increase both their own and C1’s
 	 * level of satisfaction). False otherwise.
 	 */
-    public  boolean isSatisfactory() {
+    public boolean isSatisfactory() {
         Map<Character, CompPreferences> companies = Arrays.stream(companiesPrefs).collect(Collectors.toMap(i -> i.selfChar, i -> i));
         Map<Integer, ProgPreferences> programmers = Arrays.stream(programmersPrefs).collect(Collectors.toMap(i -> i.selfInt, i -> i));
 

@@ -1,6 +1,23 @@
-# CSci 3501 Lab 5
+# CSCI 3501 Lab 5
+### Paul Friederichsen
+### Waller Li
 
-###### Paul Friederichsen and Waller Li
+## Running
+
+The source files are in `src/main/java/csci3501/lab5/`
+
+To compile and run the project, run:
+```
+./gradlew run
+```
+
+To run the unit tests, run:
+
+```
+./gradlew test
+```
+
+This will also output a summary of the test results to `build/reports/tests/test/index.html`.
 
 ## Algorithm Explanations
 
