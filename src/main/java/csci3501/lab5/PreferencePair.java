@@ -13,18 +13,7 @@ public class PreferencePair {
 		return "" + comp + prog;
 	}
 
-
-	@Override
-	public boolean equals(Object o) {
-		if (o == this)
-			return true;
-		if (!(o instanceof PreferencePair)) {
-			return false;
-		}
-		PreferencePair preferencePair = (PreferencePair) o;
-		return prog == preferencePair.prog && comp == preferencePair.comp;
+	boolean equals(PreferencePair p) {
+		return p == this || prog == p.prog && comp == p.comp;
 	}
-
-
-
 }
